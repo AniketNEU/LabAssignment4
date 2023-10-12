@@ -20,6 +20,7 @@ public class Patient {
     private String gender;
     private String message;
     private Date date;
+    private String photoFilePath;
 
    
     public Patient(){
@@ -90,5 +91,11 @@ public class Patient {
         this.date = date;
     }
     
-    
+     public String getPhotoFilePath() {
+        return photoFilePath;
+    }
+
+    public void setPhotoFilePath(String photoFilePath) {
+        this.photoFilePath = photoFilePath;
+    }
 }
