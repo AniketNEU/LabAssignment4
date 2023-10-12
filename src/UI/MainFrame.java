@@ -17,6 +17,7 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    private boolean isFormCompleted = false;
     
     FormPanel formPanel;
     public MainFrame() {
@@ -26,7 +27,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void initializeComponents() {
     formPanel = new FormPanel(bottomPanel); 
-    viewButton.setEnabled(false);
+    //viewButton.setEnabled(false);
     // Other component initialization...
 }
 
@@ -118,6 +119,10 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
         // TODO add your handling code here:
+        if (!isFormCompleted) {
+        JOptionPane.showMessageDialog(this, "Please fill the form first.", "Form Not Filled", JOptionPane.WARNING_MESSAGE);
+        return;
+       }
         Patient patient = new Patient();
         ViewPanel newViewPanel = new ViewPanel(patient);
         bottomPanel.add(newViewPanel, "ViewPanel");       

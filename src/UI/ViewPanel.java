@@ -26,6 +26,7 @@ public class ViewPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormPanel
      */
+
     private Patient newPatient;
     
     public ViewPanel(Patient newPatient) {
