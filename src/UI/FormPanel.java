@@ -31,7 +31,11 @@ import javax.swing.plaf.ComponentUI;
  */
 public class FormPanel extends javax.swing.JPanel {
     private String uploadedPhotoPath;
+    private Patient patient;
 
+    public Patient getPatient() {
+        return patient;
+    }
     /**
      * Creates new form FormPanel
      */
@@ -349,7 +353,7 @@ public class FormPanel extends javax.swing.JPanel {
     private void submitButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButton3ActionPerformed
         // TODO add your handling code here:
         //System.out.println("hello");
-        Patient patient = new Patient();
+       // Patient patient = new Patient();
          
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();

@@ -30,11 +30,21 @@ public class ViewPanel extends javax.swing.JPanel {
     
     public ViewPanel(Patient newPatient) {
         initComponents();
-        this.newPatient = newPatient;
-        populateData();
+        if(newPatient != null){
+          this.newPatient = newPatient;
+          populateData();  
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Please fill the form first.", "Form Not Filled", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        
     }
     
     private void populateData() {
+        if(newPatient == null){
+            JOptionPane.showMessageDialog(this, "Please fill the form first.", "Form Not Filled", JOptionPane.WARNING_MESSAGE);
+        }
         firstNameTextField.setText(this.newPatient.getFirstName());
         lastNameTextField.setText(this.newPatient.getLastName());
         ageTextField.setText(this.newPatient.getAgeText());

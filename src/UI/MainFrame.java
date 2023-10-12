@@ -6,6 +6,7 @@ package UI;
 
 import Model.Patient;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,10 +21,12 @@ public class MainFrame extends javax.swing.JFrame {
     FormPanel formPanel;
     public MainFrame() {
         initComponents();
+        initializeComponents();
     }
     
     private void initializeComponents() {
     formPanel = new FormPanel(bottomPanel); 
+    viewButton.setEnabled(false);
     // Other component initialization...
 }
 
@@ -109,6 +112,7 @@ public class MainFrame extends javax.swing.JFrame {
         bottomPanel.add(newFormPanel, "FormPanel");       
         CardLayout layout = (CardLayout) bottomPanel.getLayout();     
         layout.show(bottomPanel, "FormPanel");
+         viewButton.setEnabled(true);
     }//GEN-LAST:event_formButtonActionPerformed
 
     
@@ -118,7 +122,8 @@ public class MainFrame extends javax.swing.JFrame {
         ViewPanel newViewPanel = new ViewPanel(patient);
         bottomPanel.add(newViewPanel, "ViewPanel");       
         CardLayout layout = (CardLayout) bottomPanel.getLayout();     
-        layout.show(bottomPanel, "ViewPanel");       
+        layout.show(bottomPanel, "ViewPanel");     
+      
     }//GEN-LAST:event_viewButtonActionPerformed
 
     /**
